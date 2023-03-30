@@ -28,8 +28,6 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set cursorline
-set cursorcolumn
 set noswapfile
 set undofile
 set undodir=~/.vim/undodir
@@ -73,6 +71,13 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let g:AutoPairsFlyMode = 1
 let g:AutoPairsShortcut
 
+" Enable coc.nvim
+let g:coc_global_extensions = ['coc-python']
+autocmd FileType python let g:coc_global_extensions = ['coc-python']
+
+" Use LSP for Python with Pyright
+let g:coc_server_path = 'pyright'
+let g:coc_node_path = '/usr/bin/node'  " Path to Node.js executable
 
 
 set termguicolors
