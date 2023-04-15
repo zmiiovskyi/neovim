@@ -1,85 +1,115 @@
-" Встановлюємо плагіни
-call plug#begin('~/.config/nvim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-sensible'                 " Розумні налаштування
-Plug 'tpope/vim-fugitive'                 " Git інтеграція
-Plug 'tpope/vim-surround'                 " Підтримка дужок та кавичок
-Plug 'scrooloose/nerdtree'                " Дерево проекту
-Plug 'jiangmiao/auto-pairs'               " Автозакривання дужок та кавичок
-Plug 'neomake/neomake'                    " Система збірки та перевірки коду
-Plug 'vim-airline/vim-airline'            " Статусний рядок
-Plug 'vim-airline/vim-airline-themes'     " Теми для статусного рядка
-Plug 'itchyny/lightline.vim'              " Альтернативний статусний рядок
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'dense-analysis/ale'                 " Система перевірки синтаксису та стилю
-Plug 'preservim/nerdcommenter'            " Коментування коду
-Plug 'hrsh7th/nvim-compe'                 " Автодоповнення
-Plug 'hrsh7th/vim-vsnip'                  " Сніпети
-Plug 'SirVer/ultisnips'                   " Ще одна система сніпетів
+:set number
+:set relativenumber
+:set tabstop=4
+:set shiftwidth=4
+:set smarttab
+:set softtabstop=4
+:set scrolloff=5
+
+
+call plug#begin()
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'https://github.com/preservim/nerdtree'
+Plug 'https://github.com/ryanoasis/vim-devicons'
+Plug 'https://github.com/ap/vim-css-color'
+Plug 'https://github.com/neoclide/coc.nvim'
+Plug 'https://github.com/habamax/vim-godot'
+Plug 'https://github.com/rafi/awesome-vim-colorschemes'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/mg979/vim-visual-multi'
+Plug 'https://github.com/preservim/tagbar'
+Plug 'https://github.com/morhetz/gruvbox'
+
+set encoding=UTF-8
+:set completeopt-=preview
+set guifont=DroidSansMono\ Nerd\ Font\ 11
+" source ~/.local/share/nvim/plugged/awesome-vim-colorschemes/colors/afterglow.vim
+let g:airline_theme='afterglow'
 call plug#end()
 
-" Базові налаштування
-syntax on
-set number
-set mouse=a
-set clipboard+=unnamedplus
-set smartindent
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set noswapfile
-set undofile
-set undodir=~/.vim/undodir
-set wildmenu
-set showmode
-set showcmd
-set scrolloff=3
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
-set laststatus=2
-set splitright
-set splitbelow
-set completeopt=menuone,noinsert,noselect
-set signcolumn=yes
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+nnoremap <F5> :w<Cr>
+inoremap jk <Esc>
+:set completeopt-=preview
 
-" Налаштування плагінів
-" Vim-Sensible
-set backup
-set backspace=indent,eol,start
-set history=1000
-set ruler
-set term=xterm-256color
-
-" Vim-Airline
-let g:airline_theme='wombat'
-
-" Lightline
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
-
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeWinSize = 20
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-
-" Auto-pairs
-let g:AutoPairsFlyMode = 1
-let g:AutoPairsShortcut
-
-" Enable coc.nvim
-let g:coc_global_extensions = ['coc-python']
-autocmd FileType python let g:coc_global_extensions = ['coc-python']
-
-" Use LSP for Python with Pyright
-let g:coc_server_path = 'pyright'
-let g:coc_node_path = '/usr/bin/node'  " Path to Node.js executable
-
-
-set termguicolors
-set background=dark
 colorscheme gruvbox
+colorscheme gruvbox
+
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap ' ''<left>
+inoremap " ""<left>
+
+
+map ' `
+map й q
+map ц w
+map у e
+map к r
+map е t
+map н y
+map г u
+map ш i
+map щ o
+map з p
+map х [
+map ї ]
+map ф a
+map і s
+map в d
+map а f
+map п g
+map р h
+map о j
+map л k
+map д l
+map ж ;
+map є '
+map я z
+map ч x
+map с c
+map м v
+map и b
+map т n
+map ь m
+map б ,
+map ю .
+map ʼ ~
+map Й Q
+map Ц W
+map У E
+map К R
+map Е T
+map Н Y
+map Г U
+map Ш I
+map Щ O
+map З P
+map Х {
+map Ї }
+map Ф A
+map І S
+map В D
+map А F
+map П G
+map Р H
+map О J
+map Л K
+map Д L
+map Ж :
+map Э "
+map Я Z
+map Ч X
+map С C
+map М V
+map И B
+map Т N
+map Ь M
+map Б <
+map Ю >
+map . /
+
